@@ -5,9 +5,7 @@ public class Craps {
     private Random randomNumbers = new Random();
 
     // enumeration with constants that represent the game status
-    private enum Status {CONTINUE, WON, LOST}
-
-    ;
+    private enum Status {CONTINUE, WON, LOST};
 
     private int numRolls; // Modification: Holding number of rolls per game
 
@@ -26,8 +24,6 @@ public class Craps {
     }
     // Getters to get stuff (Yeah!)
     // numRolls and win
-
-
     public int getNumRolls() {
         return numRolls;
     }
@@ -56,7 +52,7 @@ public class Craps {
             default: // did not win or lose, so remember point
                 gameStatus = Status.CONTINUE; // game is not over
                 myPoint = sumOfDice; // remember the point
-                System.out.printf("Point is %d\n", myPoint);
+//                System.out.printf("Point is %d\n", myPoint);
                 break; // optional at end of switch
         } // end switch
 
@@ -74,11 +70,12 @@ public class Craps {
 
         // display won or lost message
         if (gameStatus == Status.WON) {
-            System.out.println("Player wins");
+//            System.out.println("Player wins");
             // Modifcation: set win boolean to true when player wins
             win = true;
-        } else
-            System.out.println("Player loses");
+        } else {
+//            System.out.println("Player loses");
+        }
     } // end method play
 
     // roll dice, calculate sum and display results
@@ -86,13 +83,12 @@ public class Craps {
         // pick random die values
         int die1 = 1 + randomNumbers.nextInt(6); // first die roll
         int die2 = 1 + randomNumbers.nextInt(6); // second die roll
-        // Modification: incriment numRolls
+        // Modification: increment numRolls
         numRolls++;
         int sum = die1 + die2; // sum of die values
 
         // display results of this roll
-        System.out.printf("Player rolled %d + %d = %d\n",
-                die1, die2, sum);
+//        System.out.printf("Player rolled %d + %d = %d\n", die1, die2, sum);
 
         return sum; // return sum of dice
     } // end method rollDice
